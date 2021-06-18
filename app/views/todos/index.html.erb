@@ -1,0 +1,10 @@
+<h1>Todos#index</h1>
+<p>Find me in app/views/todos/index.html.erb</p>
+
+<%= link_to "Add a new todo", new_todo_path %>
+
+<ul class="todos">
+    <% @todos.each do |todo| %>
+    <li><%= todo.title %></li>
+    <% end %>
+</ul>

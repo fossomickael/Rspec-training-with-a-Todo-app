@@ -1,0 +1,6 @@
+<h1>Form</h1>
+<%= form_for @todo do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.submit "Submit" %>
+<% end %>
