@@ -10,7 +10,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(todo_params)
+    @todo = Todo.new(todo_params.merge(email: session[:current_email]))
     @todo.save
     redirect_to todos_path
   end
