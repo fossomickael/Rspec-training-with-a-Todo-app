@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :todos, only: [:index, :new, :create]
 
-  resource :session, only: [:new]
+  resources :sessions, only: [:new, :create]
 end
