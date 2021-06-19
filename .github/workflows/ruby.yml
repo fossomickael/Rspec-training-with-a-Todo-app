@@ -44,5 +44,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.13.0
+    - name: Webpack compile
+      run: bundle exec rails webpacker:compile
     - name: Run tests
       run: bundle exec rake
