@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    current_user
+    nil
   end
 
   def sign_in_as(email)
