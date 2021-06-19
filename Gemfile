@@ -44,6 +44,7 @@ group :development do
   gem 'spring'
   gem 'rspec-rails'
   gem 'capybara'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
