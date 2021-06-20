@@ -8,6 +8,6 @@ feature 'user see owns todos' do
     todo.save
 
     sign_in_as 'someone_else@example.com'
-    expect(page).not_to have_css '.todos li', text: 'Buy car'
+    expect(page).not_to display_todo('Buy car')
   end
 end

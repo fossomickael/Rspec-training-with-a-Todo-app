@@ -3,11 +3,9 @@ require 'rails_helper'
 feature 'user complete todo' do
   scenario 'successfully' do
     sign_in
-    click_on 'Add a new todo'
-    fill_in 'Title', with: 'Buy car'
-    click_on 'Submit'
 
+    create_todo('Buy car')
     click_on 'Mark complete'
-    expect(page).to have_css '.todos li.completed', text: 'Buy car'
+    expect(page).to display_completed_todo('Buy car')
   end
 end
