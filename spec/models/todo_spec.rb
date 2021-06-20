@@ -16,13 +16,23 @@ describe Todo, '#completed?' do
       somebody = User.create!(email: 'somebody@example.com')
       todo = Todo.new(completed_at: nil)
       todo.user = somebody
-      
       todo.save!
-      
       todo.complete!
-      
       todo.reload
       expect(todo).to be_completed
+    end
+  end
+
+  describe Todo, "#mark_incomplete!" do
+    it "it set completed_at to nil" do
+      somebody = User.create!(email: 'somebody@example.com')
+      todo = Todo.new(completed_at: Time.current)
+      todo.user = somebody
+      todo.save!
+      todo.mark_incomplete!
+      todo.reload
+
+      expect(todo).not_to be_completed
     end
   end
 
